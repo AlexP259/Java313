@@ -24,15 +24,15 @@ public class Praktika_03 {
 
     /*..........................................Методы к 3 заданию...................................................*/
 //    public static void printTwoNum(){
-//        int[] array = twoNum();
+//        int[] array = twoNum(0, 0);
 //        String sum = "a + b = " + array[0];
 //        String difference = "a - b = " + array[1];
 //        String multyplication = "a * b = " + array[2];
 //        System.out.println(sum + "\n" + difference + "\n" + multyplication);
 //    }
-//    public static int[] twoNum() {
+//    public static int[] twoNum(int a, int b) {
 //        Scanner input = new Scanner(System.in);
-//        int a = 0, b = 0, sum = 0, difference = 1, multyplication = 2;
+//        int sum = 0, difference = 1, multyplication = 2;
 //        int[] array = new int[3];
 //        try {
 //            System.out.print("Введите два целых числа\n1 -> ");
@@ -44,7 +44,7 @@ public class Praktika_03 {
 //            array[multyplication] = a * b;
 //        } catch (InputMismatchException e) {
 //            System.out.println("Вы ввели вещественное число, букву или символ. Попробуйте ещё раз");
-//            twoNum();
+//            array = twoNum(a, b);
 //        } finally {
 //            input.close();
 //        }
