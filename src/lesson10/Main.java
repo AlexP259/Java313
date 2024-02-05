@@ -291,8 +291,9 @@ public class Main {
 //        System.out.println(0b101 >> 1);
 //        System.out.println("Hi. Я вношу изменения в файл");
 
-        System.out.println("Проверка изменений на GitHub");
+//        System.out.println("Проверка изменений на GitHub");
 
+        System.out.println("Вносим изменения на другом компьютере");
 
 
     }
