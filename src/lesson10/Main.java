@@ -295,8 +295,26 @@ public class Main {
 
         System.out.println("Вносим изменения на другом компьютере");
 
+//        System.out.println(0b101 >> 1);
+//        System.out.println(Integer.toBinaryString(5 >> 1));
+//        System.out.println(Integer.toBinaryString(0b101 >> 1));
+
+//        printBinaryString(0b10000000000000000000000000000000);
+//        printBinaryString(0b10000000000000000000000000000000 >>> 15);
+//        printBinaryString(0b10000000000000000000000000000000);
+//        printBinaryString(0b10000000000000000000000000000000 << 15);
+
 
     }
+
+
+//    public static void printBinaryString(int hexNumber){
+//        String bits = Integer.toBinaryString(hexNumber);
+//        String allBits = "00000000000000000000000000000000".substring(0, 32 - bits.length()) + bits;
+//        System.out.printf("%11d : %s%n", hexNumber, allBits);
+//    }
+
+
 }
 
 
