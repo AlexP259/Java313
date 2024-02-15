@@ -1,9 +1,8 @@
-package praktika;
+package practics;
 
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
-public class Praktika_05 {
+public class Practics_05 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         /*...........................................Задание 1......................................................*/

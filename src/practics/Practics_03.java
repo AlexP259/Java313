@@ -1,10 +1,6 @@
-package praktika;
+package practics;
 
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.InputMismatchException;
-
-public class Praktika_03 {
+public class Practics_03 {
     public static void main(String[] args) {
         /*...........................................Задание 1......................................................*/
 //        System.out.println("Fall seven times\nand\nstand up eight");

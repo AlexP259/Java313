@@ -1,11 +1,6 @@
-package praktika;
+package practics;
 
-import com.sun.security.jgss.GSSUtil;
-
-import java.util.Scanner;
-import java.util.InputMismatchException;
-
-public class Praktika_04 {
+public class Practics_04 {
     public static void main(String[] args) {
         /*...........................................Задание 1......................................................*/
 //        printOneNum();
