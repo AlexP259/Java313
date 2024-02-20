@@ -7,8 +7,8 @@ public class Main {
         System.out.println("Ширина: " + rect.getWidth());
         System.out.println("Длина: " + rect.getLength());
         System.out.println("Цвет: " + rect.getColor());
+        rect.setColor("purple");
+        System.out.println("Цвет: " + rect.getColor());
         System.out.println("Площадь: " + rect.area());
     }
-
-
 }

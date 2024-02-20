@@ -1,6 +1,6 @@
 package lesson13.shape;
 
-public class Figure {
+class Figure {
     private String color;
 
     public Figure(){}

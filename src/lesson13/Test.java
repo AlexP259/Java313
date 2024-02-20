@@ -3,8 +3,9 @@ package lesson13;
 public class Test {
     public static void main(String[] args) {
         Line l1 = new Line();
-        l1.setId(6);
+//        l1.setId(6);
         System.out.println(l1.getId());
+        System.out.println(l1.id);
 
 
 //        l1.color = "red";
@@ -40,10 +41,13 @@ public class Test {
     }
 }
 
+
+
+
 class Properties {
     int width;
     String color;
-    private int id = 1;
+    final private int id = 1;
 
     public Properties() {
         System.out.println("Конструктор Properties");
@@ -56,7 +60,6 @@ class Properties {
 
     }
 
-    //    void showProp(){
     void show() {
         System.out.println("Ширина - " + this.width + "px, цвет - " + this.color);
     }
@@ -65,15 +68,20 @@ class Properties {
         return id;
     }
 
-    protected void setId(int id) {
-        this.id = id;
-    }
+//    final protected void setId(int id) {
+//        if (id > 0){
+//            this.id = id;
+//        }
+//    }
 }
+
+
+
 
 class Line extends Properties {
     double x1, y1;
     double x2, y2;
-//    int id = 2;
+    int id = 2;
 
     public Line() {
         super(0, "orange");
@@ -90,6 +98,9 @@ class Line extends Properties {
         System.out.println("id = " + this.getId() + ", родительский id = " + super.getId());
     }
 }
+
+
+
 
 class Triangle {
     double x1, y1;
