@@ -8,26 +8,43 @@ public class Base {
         geom[1] = new Rectangle(2,"yellow",10);
         geom[2] = new Triangle(3,"green",10);
 
-        for (Shape g: geom) {
-            g.draw();
-        }
+//        for (Shape g: geom) {
+//            g.draw();
+//            g.getSquare();
+//        }
 
+        for (int i = 0; i < geom.length; i++) {
+            geom[i].draw();
+            if (geom[i] instanceof MathShape) {
+                double s = ((MathShape) geom[i]).getSquare();
+                System.out.println("Площадь: " + s + "\n");
+            }
+        }
+        
     }
 }
+
+
+
+
+interface MathShape{
+    double getSquare();
+}
+
+
+
+
 
 abstract class Shape{
     private int width;
     private String color;
-
 
     public Shape(int width, String color) {
         this.width = width;
         this.color = color;
     }
 
-
     abstract void draw();
-
 
     public int getWidth() {
         return width;
@@ -35,12 +52,25 @@ abstract class Shape{
     public String getColor() {
         return color;
     }
+    public void setWidth(int width) {
+        this.width = width;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
+
+
+
 
 
 
 class Line extends Shape{
     private int x1, x2, y1, y2;
+
+    public void info(){
+        System.out.println("Координаты линии: " + this.x1 + " " + this.x2 + " " + this.y1 + " " + this.y2 + "\n");
+    }
 
     public Line(int width, String color, int x1, int x2, int y1, int y2) {
         super(width, color);
@@ -52,14 +82,21 @@ class Line extends Shape{
 
     @Override
     void draw() {
-        System.out.println("Рисование линии");
+        System.out.println("Рисование линии\n");
     }
 }
 
 
 
-class Rectangle extends Shape{
+
+
+
+class Rectangle extends Shape implements MathShape{
     private int height;
+
+    public void info(){
+        System.out.println("Длина: " + this.getWidth() + " , ширина: "  + "\n");
+    }
 
     public Rectangle(int width, String color, int height) {
         super(width, color);
@@ -71,13 +108,19 @@ class Rectangle extends Shape{
         System.out.println("Рисование прямоугольника");
     }
 
-//    public int getSquare() {
-//        return ;
-//    }
+    @Override
+    public double getSquare() {
+        return getWidth() * this.height;
+    }
 }
 
-class Triangle extends Shape{
+
+
+
+
+class Triangle extends Shape implements MathShape{
     private int height;
+
 
     public Triangle(int width, String color, int height) {
         super(width, color);
@@ -88,4 +131,28 @@ class Triangle extends Shape{
     void draw() {
         System.out.println("Рисование треугольника");
     }
+
+    @Override
+    public double getSquare() {
+        return 0.5 * getWidth() * this.height;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
