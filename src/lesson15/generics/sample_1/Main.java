@@ -22,6 +22,7 @@ public class Main {
         pl2.add("g");
         System.out.println();
         pl2.printList(false);
+
     }
 }
 
