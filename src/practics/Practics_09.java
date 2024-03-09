@@ -1,7 +1,10 @@
 package practics;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.lang.StringBuilder;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class Practics_09 {
     static Scanner input = new Scanner(System.in);
@@ -22,6 +25,19 @@ public class Practics_09 {
 
         /*.............................................Задание 4...................................................*/
 //        System.out.println(palindromeOrNot());
+
+        /*.............................................Задание 5...................................................*/
+        String text = "есть некоторый 13 текст. реализуйте следующую функциональность2. изменить текст таким" +
+                " образом, чтобы каждое предложение начиналось с большой буквы. посчитайте сколько34 раз цифры  " +
+                "встречаются4 в тексте... посчитайте сколько ра5з знаки препинания встреча6ются в тексте. " +
+                "Посчитайте колич71ество предложений в тексте...";
+        System.out.println(upperCaseFirstLetter(text));
+        System.out.println("Чисел в тексте: " + counterNums(text));
+        System.out.println("Знаков препинания в тексте: " + punctuationMarks(text));
+        System.out.println("Предложений в тексте: " + numOfSentence(text));
+
+
+
     }
 
 
@@ -30,7 +46,7 @@ public class Practics_09 {
 //        return new StringBuilder(str).reverse().toString();
 //    }
 
-    /*...........................................Метод к заданию 2..................................................*/
+    /*...........................................Методы к заданию 2..................................................*/
 //    public static String[] lineAndSearchWord(){
 //        String[] arr = new String[2];
 //        System.out.print("Введите строку: ");
@@ -53,7 +69,7 @@ public class Practics_09 {
 //        return counter;
 //    }
 
-    /*...........................................Метод к заданию 3..................................................*/
+    /*...........................................Методы к заданию 3..................................................*/
 //    public static String replaceWord() {
 //        System.out.print("Введите строку: ");
 //        String str  = input.nextLine();
@@ -67,7 +83,7 @@ public class Practics_09 {
 //        return  str.replace(replacedWord, wordForReplace);
 //    }
 
-    /*...........................................Метод к заданию 4..................................................*/
+    /*...........................................Методы к заданию 4..................................................*/
 //    public static boolean palindromeOrNot() {
 //        String str = enterTheValues();
 //        String withoutSpace = "";
@@ -88,6 +104,51 @@ public class Practics_09 {
 //        System.out.print("Введите слово или предложение -> ");
 //        return input.nextLine();
 //    }
+
+    /*...........................................Методы к заданию 5..................................................*/
+    public static String upperCaseFirstLetter(String text){
+        String[] arr = text.split("\\. ");
+        System.out.println(Arrays.toString(arr).replaceAll("[\\[\\]]", ""));
+        String result = "";
+        for (int i = 0; i < arr.length; i++) {
+            result += i == arr.length - 1 ? String.valueOf(arr[i].charAt(0)).toUpperCase() +
+                    arr[i].substring(1) : String.valueOf(arr[i].charAt(0)).toUpperCase() +
+                    arr[i].substring(1) + ". ";
+        }
+        return result;
+    }
+
+    public static int counterNums(String text){
+        int counter = 0;
+        String regex = "\\d+";
+        Pattern pattern = Pattern.compile(regex); // метод компилирует заданное регулярное выражение в шаблон (паттерн)
+        Matcher matcher = pattern.matcher(text);
+        while(matcher.find()){
+            counter++;
+        }
+        return counter;
+    }
+
+    public static int punctuationMarks(String text){
+        int counter = 0;
+        String regex = "(\\.{3}|[.,](?![.,]))";
+        Pattern pattern = Pattern.compile(regex); // метод компилирует заданное регулярное выражение в шаблон (паттерн)
+        Matcher matcher = pattern.matcher(text);
+        while(matcher.find()){
+            counter++;
+        }
+        return counter;
+    }
+
+    public static int numOfSentence(String text){
+        String[] split = text.split("\\.");
+        int counter = 0;
+        for (String s : split) {
+            counter++;
+        }
+        return counter;
+    }
+
 }
 
 
