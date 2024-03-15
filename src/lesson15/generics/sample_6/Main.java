@@ -6,18 +6,20 @@ public class Main {
         Digit d2 = new Digit(10.5);
         Digit d3 = new Digit(10.5f);
 
-        System.out.println(d1.value + " " + d2.value + " " + d3.value);
+
+        System.out.println(d1.value);
+        System.out.println(d2.value);
+        System.out.println(d3.value);
     }
 }
 
-class  Digit{
+
+class Digit{
     public double value;
 
-    public <T extends Number> Digit(T value){
+
+
+    public <T extends Number> Digit(T value) {
         this.value = value.doubleValue();
     }
-
-//    public Digit(double value) {
-//        this.value = value;
-//    }
 }

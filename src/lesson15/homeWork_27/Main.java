@@ -31,7 +31,7 @@ public class Main{
     }
 
     public static <T> void printArray(T[] array){
-        System.out.println("Массив: " + Arrays.toString(array).replaceAll("[\\[\\],]", " "));
+        System.out.println("Массив: " + Arrays.toString(array).replaceAll("[\\[\\],]", ""));
     }
 }
 

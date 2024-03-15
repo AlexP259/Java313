@@ -2,13 +2,11 @@ package lesson15.generics.sample_7;
 
 public class Main {
     public static void main(String[] args) {
-        Point2 <Float> pt = new Point2<>();
-        pt.setCoord(10f, 20f);
-
+        Point<Float> pt = new Point<>();
+        pt.setCoord(10f,20f);
 
         System.out.println(pt.getCoord(TypeCoord.COORD_X));
         System.out.println(pt.getCoord(TypeCoord.COORD_Y));
-
     }
 }
 
@@ -25,7 +23,7 @@ interface GeomInterface<T> {
 }
 
 
-class Point2 <TT> implements GeomInterface<TT>{
+class Point<TT> implements GeomInterface<TT>{
     private TT x, y;
 
     @Override
@@ -36,6 +34,6 @@ class Point2 <TT> implements GeomInterface<TT>{
 
     @Override
     public TT getCoord(TypeCoord type) {
-        return (type == TypeCoord.COORD_X) ? x : y;
+        return (type == TypeCoord.COORD_X) ? this.x : this.y;
     }
 }

@@ -6,21 +6,23 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-        ArrayList<String> colors = new ArrayList<>(Arrays.asList("red", "green", "orange"));
+        Integer[] massivInt = {1, 2, 3, 4, 5, 6};
+        String[] massivStr = {"red", "green", "orange"};
 
-        System.out.println("Исходный список чисел: " + numbers);
-        System.out.println("Исходный список цветов: " + colors);
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(massivInt));
+        ArrayList<String> colors = new ArrayList<>(Arrays.asList(massivStr));
 
-        ArrayList<Integer> reversedNumbers = reverseList(numbers);
-        ArrayList<String> reversedColors = reverseList(colors);
+        System.out.println("Исходный список чисел: " + numbers.toString().replaceAll("[\\[\\],]", ""));
+        System.out.println("Исходный список цветов: " + colors.toString().replaceAll("[\\[\\],]", "") + "\n");
 
-        System.out.println("Развернутый список чисел: " + reversedNumbers);
-        System.out.println("Развернутый список цветов: " + reversedColors);
+        ArrayList<Integer> revNums = reverseList(numbers);
+        ArrayList<String> revColors = reverseList(colors);
+
+        System.out.println("Перевернутый список чисел: " + revNums.toString().replaceAll("[\\[\\],]", ""));
+        System.out.println("Перевернутый список цветов: " + revColors.toString().replaceAll("[\\[\\],]", ""));
     }
 
-
-    static <T> ArrayList<T> reverseList(ArrayList<T> originalList){
+    public static <T> ArrayList<T> reverseList(ArrayList<T> originalList) {
         ArrayList<T> reversedList = new ArrayList<>();
 
         for (int i = originalList.size() - 1; i >= 0; i--) {
@@ -29,5 +31,4 @@ public class Main {
 
         return reversedList;
     }
-
 }
