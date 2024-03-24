@@ -9,7 +9,7 @@ import java.util.ListIterator;
 public class Main {
     public static void main(String[] args) {
         /*................................................ LinkedList ................................................*/
-        // В отличие от ArrayList, который обычно хранит один тип данных, LinkedList может хранить всё что угодно
+        // каждый элемент содержит помимо своего индекса, еще адрес следующего элемента и предыдущего
         Student st1 = new Student("Victor", 2);
         Student st2 = new Student("Anna", 3);
         Student st3 = new Student("Irina", 1);
