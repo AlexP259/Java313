@@ -5,23 +5,30 @@ package lesson18.collection5;
 // compareTo, если имеем дело с хранением в Set инстансов созданных нами классов. Т.к. уже на этапе добавления первого
 // элемента Set должен знать как эти элементы сравнивать. Повторы сравниваемого поля он не принимает
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Collections;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-//        Set<String> set = new HashSet<>();
-//        set.add("Валентин");
-//        set.add("Николай");
-//        set.add("Григорий");
-//        set.add("Александр");
-//        set.add("Александр");
-//        System.out.println(set);
-//        for (String s : set) {
-//            System.out.println(s);
-//        }
+        HashSet<String> set = new HashSet<>();
+        set.add("Валентин");
+        set.add("Николай");
+        set.add("Григорий");
+        set.add("Александр");
+        set.add("Александр");
+        System.out.println(set);
+        for (String s : set) {
+            System.out.println(s + " " + s);
+        }
+
+
+
+        List<String> list = new ArrayList<>(set);
+        Collections.sort(list, Collections.reverseOrder());     // отсортировали по алфавиту в обратном порядке
+        Set<String> set2 = new LinkedHashSet<>(list);
+        Iterator<String> iter = set2.iterator();
+        for (int i = 0; i < set2.size(); i++) {
+            System.out.println(iter.next());
+        }
 //        set.remove("Александр");
 //        System.out.println();
 //        set.add(null);
@@ -72,23 +79,23 @@ public class Main {
 //        System.out.println("Max collections: " + Collections.max(num));
 //        System.out.println("Min collections: " + Collections.min(num));
 
-        int[] arr = {2, 5, 2, 4, 8, 8, 10};
-        System.out.println("Исх. массив: " + Arrays.toString(arr));
-//        int[] arr2 = arr.clone();
-//        System.out.println(arr2);
-        Set<Integer> setArray = new HashSet<>();
-//        setArray.addAll(Arrays.asList(arr));                      !!!!!!!!!!!
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < arr.length; i++) {
-            set.add(arr[i]);
-        }
-        System.out.println("Формат Set: " + set);
-        int[] uniqueArr = new int[set.size()];
-        int i = 0;
-        for (int num : set) {
-            uniqueArr[i++] = num;
-        }
-        System.out.println("Массив без дубликатов: " + Arrays.toString(uniqueArr));
+//        int[] arr = {2, 5, 2, 4, 8, 8, 10};
+//        System.out.println("Исх. массив: " + Arrays.toString(arr));
+////        int[] arr2 = arr.clone();
+////        System.out.println(arr2);
+////        Set<Integer> setArray = new HashSet<>();
+////        setArray.addAll(Arrays.asList(arr));                      !!!!!!!!!!!
+//        Set<Integer> set = new HashSet<>();
+//        for (int i = 0; i < arr.length; i++) {
+//            set.add(arr[i]);
+//        }
+//        System.out.println("Формат Set: " + set);
+//        int[] uniqueArr = new int[set.size()];
+//        int i = 0;
+//        for (int num : set) {
+//            uniqueArr[i++] = num;
+//        }
+//        System.out.println("Массив без дубликатов: " + Arrays.toString(uniqueArr));
 
 
 

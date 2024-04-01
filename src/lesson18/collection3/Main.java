@@ -13,7 +13,6 @@ public class Main {
         System.out.println(vector.firstElement());
         System.out.println(vector.lastElement());
         System.out.println(vector.get(1));
-        vector.remove(2);
         System.out.println(vector);
     }
 }

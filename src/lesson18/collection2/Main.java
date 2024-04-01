@@ -22,6 +22,7 @@ public class Main {
         stLL.add(st3);
         stLL.add(st4);
         stLL.add(st5);
+
 //        System.out.println("LinkedList = " + stLL);
 //        System.out.println(stLL.get(2));
 //        Student st6 = new Student("Maria",2);

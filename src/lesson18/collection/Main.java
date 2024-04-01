@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 
 public class Main {
@@ -13,7 +14,9 @@ public class Main {
         arrayList1.add("Валерий");
         arrayList1.add("Ирина");
         arrayList1.add("Игорь");
-        System.out.println(arrayList1);     // [Валерий, Ирина, Игорь]
+        arrayList1.add(null);
+        System.out.println(arrayList1);     // [Валерий, Ирина, Игорь, null]
+
 
 
 //        ArrayList<String> arrayList2 = new ArrayList<>(3);  // помогаем выделить память на 3 элемента, будет работать быстрее

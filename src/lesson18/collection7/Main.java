@@ -7,10 +7,12 @@ import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        Set<String> treeSet = new TreeSet<>();
+        TreeSet<String> treeSet = new TreeSet<>();
         treeSet.add("b");
         treeSet.add("c");
         treeSet.add("a");
+        treeSet.add("2");
+
         System.out.println(treeSet);
 //        treeSet.remove(35);
 //        System.out.println(treeSet);

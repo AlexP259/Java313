@@ -13,6 +13,7 @@ public class Main {
         lhs.add(1);
         lhs.add(4);
         lhs.add(9);
+        lhs.add(9);
         System.out.println(lhs);    // [7, 3, 1, 4, 9]
         lhs.remove(4);
         System.out.println(lhs);    // [7, 3, 1, 9]
@@ -20,6 +21,7 @@ public class Main {
         System.out.println(lhs.contains(3));    // true
         System.out.println(lhs.removeIf(x -> x > 5));   // Удаляет элемент по условию. Принимает предикат (функц.интерфейс, с которым мы работаем через лямбды)
         System.out.println(lhs);     // [3, 1]
+
 
 
     }

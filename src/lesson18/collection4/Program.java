@@ -9,15 +9,17 @@ public class Program {
         stack.push("Виктор");
         stack.push("Игорь");
         stack.push("Михаил");
+        stack.push("Света");
         System.out.println(stack);
-//        System.out.println(stack.pop());  // pop - последний элемент удаляется
+//        System.out.println(stack.pop());  // pop - вернет последний элемент, потом он удаляется
 //        System.out.println(stack);
 //        while(!stack.isEmpty()){
 //            System.out.println(stack.pop());
 //            System.out.println(stack);
 //        }
-        System.out.println(stack.get(1));
-        stack.set(1, "Лиза");
+
+        stack.addFirst("Лиза");
         System.out.println(stack);
+        System.out.println(stack.pop());
     }
 }
