@@ -51,8 +51,8 @@ public class Main {
 //        }
 
 
-//        Stream<String> phoneStream = Stream.of("iPhone X", "Nokia 9", "Huawei Nexus 6P", "Samsung Galaxy S8", "LG G6");
-//        phoneStream.skip(1).limit(2).forEach(s -> System.out.println(s));  // limit ставит лимит на то, сколько элементов выведется в принципе
+        Stream<String> phoneStream = Stream.of("iPhone X", "Nokia 9", "Huawei Nexus 6P", "Samsung Galaxy S8", "LG G6");
+        phoneStream.skip(1).limit(2).forEach(s -> System.out.println(s));  // limit ставит лимит на то, сколько элементов выведется в принципе
 //        phoneStream.skip(1).forEach(s -> System.out.println(s));    // пропустит первый элемент из потока
 
 

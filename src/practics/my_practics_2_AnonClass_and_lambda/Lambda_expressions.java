@@ -1,4 +1,4 @@
-package practics.my_practics_2;
+package practics.my_practics_2_AnonClass_and_lambda;
 
 public class Lambda_expressions  {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Lambda_expressions  {
 
 
         /*....................................... Лямбда-выражения ..................................................*/
-        /*......................................... и интерфейс .....................................................*/
+        /*............................. и интерфейс (только ФУНКЦИОНАЛЬНЫЙ!!!) ......................................*/
         MyInterface2 interface2 = (x, y) -> x + y;
         System.out.println("Реализованный абстрактный метод: " + interface2.abstractMethodSum(1,2));
 

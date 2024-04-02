@@ -1,4 +1,4 @@
-package practics.my_practics_2;
+package practics.my_practics_2_AnonClass_and_lambda;
 
 public class Anonymous_classes {
     public static void main(String[] args) {

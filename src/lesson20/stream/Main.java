@@ -12,11 +12,11 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        //        String[] aarr = new String[]{"Сочи", "Москва", "Калининград"};
-//        Arrays.stream(aarr).forEach(s -> System.out.println(s));
+        //        String[] arr = new String[]{"Сочи", "Москва", "Калининград"};
+//        Arrays.stream(arr).forEach(s -> System.out.println(s));
 
 //        Stream<String> cityStream = Arrays.stream(new String[]{"Сочи", "Москва", "Калининград"});   // Создаем поток данных из обычного массива
-//        cityStream.forEach(s -> System.out.print(s + " "));     // cityStream.forEach(System.out::print); - Передается ссылка на статический метод
+//        cityStream.forEach(s -> System.out.print(s + " "));   // cityStream.forEach(System.out::print); - Передается ссылка на статический метод
 //        System.out.println();
 
         // под примитивные типы есть свои стримы - IntStream, LongStream, DoubleStream
