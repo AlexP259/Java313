@@ -58,8 +58,8 @@ public class Main {
 //        System.out.println("Имя пользователя 1: " + user1.getName());
 //        System.out.println("Имя пользователя 2: " + user2.getName());
         /* ........................................ Consumer ........................................................*/
-//        Consumer<Integer> printer = x -> System.out.printf("%d hundred bucks%n", x);
-//        printer.accept(3);
+        Consumer<Integer> printer = x -> System.out.printf("%d hundred bucks%n", x);
+        printer.accept(3);
 
 
 //        Consumer<String> printUpperCase = str -> System.out.println(str.toUpperCase());
@@ -72,8 +72,8 @@ public class Main {
 
 
         // Короче, интерфейс содержит статический метод + наследуется от Function, поэтому обращаемся к apply
-        UnaryOperator<Integer> square = x -> x * x;
-        System.out.println(square.apply(5));
+//        UnaryOperator<Integer> square = x -> x * x;
+//        System.out.println(square.apply(5));
     }
 }
 

@@ -1,11 +1,7 @@
 package lesson20.test2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
@@ -14,16 +10,27 @@ public class Main {
         List<String> phones = new ArrayList<>();
         Collections.addAll(phones, "iPhone X", "Nokia 9", "Huawei Nexus 6P", "Samsung Galaxy S8",
                 "LG G6", "Xiaomi MI6", "ASUS Zenfone 3", "Sony Xperia Z5", "Meizu Pro 6", "Pixel 2");
+//        phones.addAll(Arrays.asList("Nokia 9", "Huawei Nexus 6P", "Samsung Galaxy S8",
+//                "LG G6", "Xiaomi MI6", "ASUS Zenfone 3", "Sony Xperia Z5", "Meizu Pro 6", "Pixel 2"));
         System.out.println(phones);
 
-        boolean any = phones.stream().anyMatch(s -> s.length() > 10);  // anyMatch проверяет, что хотя бы 1 значение имеет заданную длину
-        System.out.println(any);
+        List<String> filterPhones = phones.stream().filter(s -> s.length() < 10).collect(Collectors.toList());
+        System.out.println(filterPhones);
 
-        boolean all = phones.stream().allMatch(s -> s.length() > 10);  // allMatch проверяет, соответствуют ли ВСЕ элементы заданному условию
-        System.out.println(all);
+        Set<String> filterPhones2 = phones.stream().filter(s -> s.length() < 10).collect(Collectors.toSet());
+        System.out.println(filterPhones2);
 
-        boolean non = phones.stream().noneMatch(s -> s.length() > 10);  // noneMatch вернет true, если ни одно значение НЕ СООТВЕТСТВУЕТ заданному условию
-        System.out.println(non);
+        TreeSet<String> filterPhones3 = phones.stream().filter(s -> s.length() < 10).collect(Collectors.toCollection(TreeSet::new));
+        System.out.println(filterPhones3);
+
+//        boolean any = phones.stream().anyMatch(s -> s.length() > 10);  // anyMatch проверяет, что хотя бы 1 значение имеет заданную длину
+//        System.out.println(any);
+//
+//        boolean all = phones.stream().allMatch(s -> s.length() > 10);  // allMatch проверяет, соответствуют ли ВСЕ элементы заданному условию
+//        System.out.println(all);
+//
+//        boolean non = phones.stream().noneMatch(s -> s.length() > 10);  // noneMatch вернет true, если ни одно значение НЕ СООТВЕТСТВУЕТ заданному условию
+//        System.out.println(non);
 
 
 //        Optional<String> first = phones.stream().findFirst();
@@ -51,8 +58,8 @@ public class Main {
 //        }
 
 
-        Stream<String> phoneStream = Stream.of("iPhone X", "Nokia 9", "Huawei Nexus 6P", "Samsung Galaxy S8", "LG G6");
-        phoneStream.skip(1).limit(2).forEach(s -> System.out.println(s));  // limit ставит лимит на то, сколько элементов выведется в принципе
+//        Stream<String> phoneStream = Stream.of("iPhone X", "Nokia 9", "Huawei Nexus 6P", "Samsung Galaxy S8", "LG G6");
+//        phoneStream.skip(1).limit(2).forEach(s -> System.out.println(s));  // limit ставит лимит на то, сколько элементов выведется в принципе
 //        phoneStream.skip(1).forEach(s -> System.out.println(s));    // пропустит первый элемент из потока
 
 
