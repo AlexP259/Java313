@@ -1,4 +1,4 @@
-package practics.my_practics_4_working_with_files;
+package practics.my_practics.my_practics_4_working_with_files;
 
 import java.io.*;
 import java.util.logging.Level;

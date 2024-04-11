@@ -1,4 +1,4 @@
-package practics.my_practics_2_AnonClass_and_lambda;
+package practics.my_practics.my_practics_2_AnonClass_and_lambda;
 
 public class Lambda_expressions  {
     public static void main(String[] args) {

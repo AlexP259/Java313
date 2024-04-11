@@ -1,4 +1,4 @@
-package practics.my_practics_1_Enums;
+package practics.my_practics.my_practics_1_Enums;
 
 public class Main {
     public static void main(String[] args) {

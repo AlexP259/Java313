@@ -1,4 +1,4 @@
-package practics.my_practics_3_Stream_API;
+package practics.my_practics.my_practics_3_Stream_API;
 
 public class Person implements Comparable<Person>{
     private String firstName;

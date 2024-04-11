@@ -1,4 +1,4 @@
-package practics.my_practics_3_Stream_API;
+package practics.my_practics.my_practics_3_Stream_API;
 
 import java.util.ArrayList;
 import java.util.List;

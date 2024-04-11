@@ -1,11 +1,6 @@
-package practics.my_practics_3_Stream_API;
-
-import org.w3c.dom.ls.LSOutput;
+package practics.my_practics.my_practics_3_Stream_API;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
