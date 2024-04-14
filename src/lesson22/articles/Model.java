@@ -10,7 +10,7 @@ public class Model {    // Model - основной класс, он будет 
     private String dbName;
 
     public Model() {
-        this.dbName = "src\\lesson22\\articles\\db.txt";     // будет храниться в нечитаемом формате
+        this.dbName = "db.txt";     // будет храниться в нечитаемом формате
         this.articles = loadData();  // этот linkedHashMap хранит пары "название статьи/экземпляр класса Article (т.е. сама статья)"
     }
 
