@@ -30,7 +30,7 @@ public class Main {
 }
 
 
-class Messenger extends Thread{     // это класс для отправки сообщения
+class Messenger{     // это класс для отправки сообщения
     public void sendMessage(String msg){        // этот метод и выполняет отправку сообщения. Синхронизируем synchronized работу этого метода.
         // То есть пока метод в потоке 1 полностью не отработает, на поток 2 не переключится
         System.out.println(Thread.currentThread().getName() + ", отправка сообщения: " + msg);   // выводит имя текущего потока
