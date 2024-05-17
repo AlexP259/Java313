@@ -1,0 +1,166 @@
+2.	Студенты какой кафедры и факультета сдавали социологию.
+SELECT kafedra, decanat
+FROM kafedra
+WHERE kafedra IN (
+	SELECT kafedra
+    FROM g
+    WHERE `group` IN (
+		SELECT `group`
+        FROM student
+        WHERE id_St IN (
+			SELECT id_st
+            FROM exzamen
+            WHERE predmet LIKE 'Социология'
+        )
+    )
+);
+
+SELECT kafedra.kafedra, kafedra.decanat
+FROM kafedra JOIN g
+ON kafedra.kafedra = g.kafedra JOIN student
+ON g.`group` = student.`group` JOIN exzamen
+ON student.id_st = exzamen.id_st
+WHERE exzamen.predmet LIKE 'Социология';
+
+
+5.	Вывести номера зачеток только студентов физико-технического факультета.
+SELECT n_z
+FROM zachetki
+WHERE id_Studenta IN (
+	SELECT id_St
+	FROM student
+	WHERE `group` IN (
+		SELECT `group`
+        FROM g
+        WHERE kafedra IN (
+			SELECT kafedra
+            FROM kafedra
+            WHERE decanat LIKE 'Физико-технический'
+        )
+    )
+);
+
+
+6.	Подсчитать сколько различных предметов сдавалось в сессию.
+SELECT COUNT(DISTINCT predmet)
+FROM exzamen
+WHERE `Data` IS NOT NULL;
+
+
+7.	Напишите запрос, который выводит средний балл по экзаменам Васильевой.
+SELECT AVG(Ball)
+FROM exzamen INNER JOIN student
+ON exzamen.id_st = student.id_st
+WHERE student.FIO LIKE 'Васильева%';
+
+
+8.	Определите сколько человек учится на каждой специальности.
+SELECT special, COUNT(FIO)
+FROM student
+GROUP BY special;
+
+
+9.	Напишите запрос, который покажет все группы физико-технического факультета.
+SELECT `group`
+FROM g
+WHERE g.kafedra IN (
+    SELECT kafedra
+    FROM kafedra
+    WHERE decanat LIKE 'Физико-технический'
+);
+
+
+10.	Вывести список фамилий студентов получивших 5 баллов по дифференциальным уравнениям.
+SELECT substring_index(FIO, ' ', 1) Фамилия
+FROM student JOIN exzamen
+ON student.id_st = exzamen.id_st
+WHERE predmet LIKE 'Дифференциальные уравнения' AND ball LIKE 5;
+
+
+11.	Напишите запрос, который покажет,  сколько экзаменов  сдавал Шутов.
+SELECT FIO, COUNT(DISTINCT predmet)
+FROM student JOIN exzamen
+ON student.id_st = exzamen.id_st
+WHERE FIO LIKE 'Шутов%' AND `Data` IS NOT NULL
+GROUP BY FIO;
+
+
+12.	Выведите название кафедры студентов, не сдавших хотя бы один экзамен.
+SELECT kafedra
+FROM kafedra
+WHERE kafedra IN (
+	SELECT kafedra
+    FROM g
+    WHERE `group` IN (
+		SELECT `group`
+        FROM student
+        WHERE id_st IN (
+			SELECT id_st
+            FROM exzamen
+            WHERE `data` IS NULL
+        )
+    )
+);
+
+
+13.	Подсчитать количество кафедр на каждом факультете.
+SELECT decanat, COUNT(kafedra)
+FROM kafedra
+GROUP BY decanat;
+
+
+14.	Подсчитать количество пятерок на физико-математическом факультете.
+SELECT COUNT(Ball)
+FROM exzamen
+WHERE id_st IN (
+	SELECT id_st
+    FROM student
+    WHERE `group` IN (
+		SELECT `group`
+        FROM g
+        WHERE kafedra IN (
+			SELECT kafedra
+            FROM kafedra
+            WHERE decanat LIKE 'Физико-математический'
+        )
+    )
+) AND Ball LIKE 5;
+
+
+15.	Определите номера зачетных книжек группы ФТ151
+SELECT N_Z
+FROM zachetki
+WHERE id_studenta IN (
+	SELECT id_st
+    FROM student
+    WHERE `group` LIKE 'ФТ151'
+);
+
+
+16.	Выведите перечень специальностей физико-математического факультета.
+SELECT special
+FROM student
+WHERE `group` IN (
+	SELECT `group`
+    FROM g
+    WHERE kafedra IN (
+		SELECT kafedra 
+        FROM kafedra
+        WHERE decanat LIKE 'Физико-математический'
+    )
+);
+
+SELECT special
+FROM student
+WHERE `group` LIKE 'ФМ%';
+
+
+
+
+
+
+
+
+
+
+
